@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Honesty And Omarion Countdown Site</title>
+        <link rel="stylesheet" href="style.css">
+        <style>
+            body {
+                background-color: pink;
+                text-align: center;
+            }
+            /* You can move this to style.css if you want */
+        </style>
+    </head>
+    <body>
+        <div class="heart"></div>
+        <h1>Honesty And Omarion Countdown Site</h1>
+        <div id="countdown"></div>
+        <script>
+            let targetDate = new Date("2026-06-01T00:00:00");
+
+            function updateCountdown() {
+                let now = new Date();
+                let difference = targetDate - now;
+                let seconds = Math.floor(difference / 1000);
+                let minutes = Math.floor(seconds / 60);
+                let hours = Math.floor(minutes / 60);
+                let days = Math.floor(hours / 24);
+
+                hours = hours % 24;
+                minutes = minutes % 60;
+                seconds = seconds % 60;
+
+                document.getElementById("countdown").innerText =
+                    days + "d " + hours + "h " + minutes + "m " + seconds + "s";
+            }
+
+            setInterval(updateCountdown, 1000);
+            updateCountdown();
+        </script>
+    </body>
+</html>
